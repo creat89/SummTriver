@@ -1,0 +1,4 @@
+All the files are hash saved as files
+fr.stop comes from Fresa
+en.stop comes from the smart words from SIMetrix Louis and Nenkova
+en_Fresa.stop comes from Fresa Torres-Moreno
