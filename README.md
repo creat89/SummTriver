@@ -10,7 +10,7 @@ A wiki or tutorial will posted in the future.
 
 If you use this program, please cite it with:
 
-L. A. Cabrera-Diego and J.-M. Torres-Moreno, “SummTriver: A new trivergent model to evaluate summaries automatically without human references,” Data & Knowledge Engineering, vol. 113, pp. 184–197, 2018.https://doi.org/10.1016/j.datak.2017.09.001
+L. A. Cabrera-Diego and J.-M. Torres-Moreno, “SummTriver: A new trivergent model to evaluate summaries automatically without human references,” Data & Knowledge Engineering, vol. 113, pp. 184–197, 2018. https://doi.org/10.1016/j.datak.2017.09.001
 
 ```
 @article{CABRERADIEGO2018184,
