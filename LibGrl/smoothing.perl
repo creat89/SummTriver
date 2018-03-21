@@ -1,3 +1,21 @@
+# Copyright (C) 2015-2016  Luis Adrián Cabrera Diego
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+# -----	Program to calculate different smoothing methods
+#	V 1.0  9 March 2017
+#  	Luis Adrián Cabrera Diego adrian.9819@gmail.com
 use strict;
 use utf8;
 binmode STDOUT, ":encoding(utf8)";
@@ -19,8 +37,6 @@ sub smoothing_all
 sub good_turing
 {
 	my %original=%{$_[0]};
-	#my %temp;				#To test result JM
-	#Good_Turing_smooth(\%original, \%temp);
 	my %smoothed;
 	my %Nc;
 	my $c;
@@ -38,17 +54,7 @@ sub good_turing
 		{
 			$min=$original{$gram};												#Min should be in theory 1, but in some cases it is not the case
 		}
-		# $max=$original{$gram} if($original{$gram} > $max);						#Max
 	}
-	#print("start $total:\t");
-	# foreach $c (sort{ $a <=> $b } keys(%Nc))
-	# {
-	# 	print("$c -> $Nc{$c} ");
-	# 	#print("$c ");
-	# }
-	# print("\n");
-	#die "No frequencies of 1 $min" unless(exists($Nc{1}));
-	#print("NC=$Nc{1}\ttotal: $total\n");
 	$unkn=$Nc{$min}/$total**2;													#The value for unknown cases.
 	foreach $gram (keys(%original))
 	{
@@ -57,32 +63,11 @@ sub good_turing
 		{
 			$smoothed{$gram}=($c+1)*($Nc{$c+1}/$Nc{$c});
 		}
-		# elsif($c+1<$max)
-		# {
-		# 	for(my $i=$c+1; $i<=$max; $i++)										#We try to avoid the holes (with the next freq)
-		# 	{
-		# 		if(exists($Nc{$c+$i}))
-		# 		{
-		# 			$smoothed{$gram}=($c+$i)*($Nc{$c+$i}/$Nc{$c});
-		# 			last;
-		# 		}
-		# 	}
-		# }
 		else
 		{
 			$smoothed{$gram}=$c;
-			#$smoothed{$gram}=($c+1)*(($Nc{$min}/$total)/$Nc{$c});				#We consider the next value of max as an unseen event count ($Nc{$min}/$total)
-			# for(my $i=$max; $i>=$min; $i--)									#We try to avoid the holes (with the second biggest freq
-			# {
-			# 	if(exists($Nc{$c-$i}))
-			# 	{
-			# 		$smoothed{$gram}=($c-$i)*($Nc{$c-$i}/$Nc{$c});
-			# 		last;
-			# 	}
-			# }
 		}
 	}
-	#print("$unkn\n");
 	return(\%smoothed, $unkn);
 }
 
