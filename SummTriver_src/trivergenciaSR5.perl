@@ -38,8 +38,12 @@ use utf8;
 use Storable;
 use Data::Dumper;
 use Clone 'clone';
-use Cwd;
-require "".getcwd()."/../LibGrl/smoothing.perl";
+use Cwd qw(abs_path);
+
+my $library_PATH=abs_path(__FILE__);
+$library_PATH=~s{trivergenciaSR5.perl}{};
+
+require "$library_PATH/../LibGrl/smoothing.perl";
 binmode STDOUT, ":encoding(utf8)";
 
 #Trivergence
