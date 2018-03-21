@@ -1,0 +1,1 @@
+perl summTriver_Exp.perl [PATH_config_file]
