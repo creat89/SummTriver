@@ -1,0 +1,41 @@
+<evaluation id="example">
+	<!-- General cofiguration -->
+	<text lang="en" stem="P"/>
+	<trivergence>
+		<config order="QP,QR,PR" measure="KL" method="m"/>
+		<config order="QP,QR,PR" measure="sJS" method="m"/>
+		<config order="Q,PR" measure="sJS" method="c"/>
+		<config order="QP,QR,PR" measure="JS" method="m"/>
+		<config order="Q,PR" measure="JS" method="c"/>
+		<config order="Q,PR" measure="KL" method="c"/>
+	</trivergence>
+	<!-- Use absolute paths, otherwise it might break -->
+	<output path="/home/adrian/SummTriver/Example/Results"/>
+	<!-- Set configuration -->
+	<!-- Multi document with multi=1 -->
+	<set id="Source_MultiDoc">
+		<Q id="Multi" path="/home/adrian/SummTriver/Example/Multidocument/" multi="1"/>
+		<PR>
+			<file system="resume_puces_P143" path="/home/adrian/SummTriver/Example/Summaries/resume_puces_P143.txt"/>
+			<file system="puces_baseline_prim" path="/home/adrian/SummTriver/Example/Summaries/puces_baseline_prim.txt"/>
+			<file system="puces_copernic" path="/home/adrian/SummTriver/Example/Summaries/puces_copernic.txt"/>
+			<file system="puces_ots" path="/home/adrian/SummTriver/Example/Summaries/puces_ots.txt"/>
+			<file system="puces_baseline_last" path="/home/adrian/SummTriver/Example/Summaries/puces_baseline_last.txt"/>
+			<file system="resume_puces_P088" path="/home/adrian/SummTriver/Example/Summaries/resume_puces_P088.txt"/>
+			<file system="resume_puces_P135" path="/home/adrian/SummTriver/Example/Summaries/resume_puces_P135.txt"/>
+		</PR>
+	</set>
+	<!-- Mono document with multi=0 -->
+	<set id="Source_MonoDoc">
+		<Q id="Mono" path="/home/adrian/SummTriver/Example/Monodocument/puces.txt" multi="0"/>
+		<PR>
+			<file system="resume_puces_P143" path="/home/adrian/SummTriver/Example/Summaries/resume_puces_P143.txt"/>
+			<file system="puces_baseline_prim" path="/home/adrian/SummTriver/Example/Summaries/puces_baseline_prim.txt"/>
+			<file system="puces_copernic" path="/home/adrian/SummTriver/Example/Summaries/puces_copernic.txt"/>
+			<file system="puces_ots" path="/home/adrian/SummTriver/Example/Summaries/puces_ots.txt"/>
+			<file system="puces_baseline_last" path="/home/adrian/SummTriver/Example/Summaries/puces_baseline_last.txt"/>
+			<file system="resume_puces_P088" path="/home/adrian/SummTriver/Example/Summaries/resume_puces_P088.txt"/>
+			<file system="resume_puces_P135" path="/home/adrian/SummTriver/Example/Summaries/resume_puces_P135.txt"/>
+		</PR>
+	</set>
+</evaluation>
