@@ -42,3 +42,20 @@ J.-M. Torres-Moreno, “Beyond Stemming and Lemmatization: Ultra-stemming to Imp
   eprint    = {1209.3126}
 }
 ```
+The examples were obtained from the The PUCES corpus of Automatic Text Summarization (http://dev.termwatch.es/~fresa/CORPUS/PUCES/):
+
+Cabrera-Diego L.A., Torres-Moreno JM., Durette B. (2016) Evaluating Multiple Summaries Without Human Models: A First Experiment with a Trivergent Model. In: Métais E., Meziane F., Saraee M., Sugumaran V., Vadera S. (eds) Natural Language Processing and Information Systems. NLDB 2016. Lecture Notes in Computer Science, vol 9612. Springer, Cham
+
+```
+@inproceedings{cabrera-diego_evaluating_2016,
+	address = {Manchester, UK},
+	title = {Evaluating {Multiple} {Summaries} {Without} {Human} {Models}: {A} {First} {Experiment} with a {Trivergent} {Model}},
+	volume = {9612},
+	booktitle = {Natural {Language} {Processing} and {Information} {Systems}. {Proceedings} of the 21st {International} conference on the {Application} of {Natural} {Language} to {Information} {Systems} ({NLDB} 2016)},
+	author = {Cabrera-Diego, Luis Adrián and Torres-Moreno, Juan-Manuel and Durette, Barthélémy},
+	editor = {Métais, Elisabeth and Meziane, Farid and Saraee, Mohamed and Sugumaran, Vijay and Vadera, Sunil},
+	year = {2016},
+	pages = {91--101}
+}
+```
+
