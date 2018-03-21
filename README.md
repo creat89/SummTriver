@@ -25,7 +25,7 @@ author = "Luis Adrián Cabrera-Diego and Juan-Manuel Torres-Moreno"
 }
 
 ```
-If you use UltraStemming for process the documents please cite as well:
+If you use UltraStemming for processing documents please cite as well:
 
 J.-M. Torres-Moreno, “Beyond Stemming and Lemmatization: Ultra-stemming to Improve Automatic Text Summarization”, CoRR, 2012. http://arxiv.org/abs/1209.3126
 
