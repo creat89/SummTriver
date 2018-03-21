@@ -1,4 +1,4 @@
-# Copyright (C) 2015-2017  Luis Adrián Cabrera Diego
+# Copyright (C) 2015-2018  Luis Adrián Cabrera Diego
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
@@ -15,26 +15,27 @@
 #
 # -----	Program to Library to calculate the Trivergence
 #		Based on the ideas of Juan-Manuel Torres-Moreno
-#		V 0.01  14 February 2017
+#		V 0.03  21 March 2018
 #  		Luis Adrián Cabrera Diego adrian.9819@gmail.com
 
 #Program to do the experiments about evaluating summaries using the Trivergence
 #Created by: Luis Adrián Cabrera Diego
 #Date: 14-02-2017
-#Version: 0.01
+#Version: 0.03
+#Last Version: 21-03-2018
 
 use strict;
 use utf8;
-use Storable;
 use Getopt::Std;
-use Data::Dumper;
-use Cwd;
+use Cwd qw(abs_path);
 use XML::LibXML;
-use Math::Random::Secure qw(irand);
 
-require "".getcwd()."/./trivergenciaSR5.perl";
-require "".getcwd()."/../LibGrl/limpiar.perl";
-require "".getcwd()."/../LibGrl/n-gramas1,2.perl";
+my $library_PATH=abs_path(__FILE__);
+$library_PATH=~s{summTriver_Exp.perl}{};
+
+require "$library_PATH/trivergenciaSR5.perl";
+require "$library_PATH/../LibGrl/limpiar.perl";
+require "$library_PATH/../LibGrl/n-gramas1,2.perl";
 binmode STDOUT, ":encoding(utf8)";
 
 my %opts;
@@ -46,11 +47,10 @@ $opts{h}=1 if ($ARGV[0] eq "");
 if($opts{h})
 {
 	print<<EOT;
-	perl summTriver_Exp.perl [Options] configFile
+	perl summTriver_Exp.perl configFile
 
 Notes:
-	P: All the documents of InputDir excepting one (R)
-	R: One document from the InputDir different from P
+	P: All the summaries from Q
 	Q: Source Document
 
 Options:
@@ -98,6 +98,36 @@ sub configParserAndRun
 	{
 		die ("No language indicated\n");
 	}
+	if($DOM->exists('/evaluation/text/@stem'))
+	{
+		$temp=$DOM->findvalue('/evaluation/text/@stem');
+		unless($temp=~m{[P0-5]})
+		{
+			die("Wrong stemming type 0:None, P:Porter, 1-5: UltraStemming");
+		}
+		if($temp eq "P")
+		{
+			$opts{stem}=1;
+			$opts{ultra}=0;
+		}
+		elsif($temp > 0)
+		{
+			die("UltraStemming must be between 1-5 characters") if($temp>5);
+			$opts{stem}=0;
+			$opts{ultra}=$temp;
+		}
+		else
+		{
+			$opts{stem}=0;
+			$opts{ultra}=0;
+		}
+	}
+	else
+	{
+		$opts{stem}=1;																#Porter Stemming default
+		$opts{ultra}=0;
+	}
+
 	#Trivergence config
 	if($DOM->exists('/evaluation/trivergence/@smooth'))
 	{
@@ -254,23 +284,8 @@ sub callerT
 																									 R => $ngramsR{$type}{$system}, fR => $freqR{$type}{$system},
 																									 T => $param{T}, t => $param{t}, order => $param{order},
 																									 N => $param{N}, sset => 1, smooth => $opts{s});
-			#$trivergence{"$param{QID}\_$system"}{"$param{order}\_$param{T}\_average"}+=$trivergence{"$param{QID}\_$system"}{"$param{order}\_$param{T}\_$type"};
-			#$trivergence{$system}{"AVERAGE"}+=$trivergence{$system}{$type};
 		}
 	}
-	# foreach $type (keys(%trivergence))																#For all the types of n-grams
-	# {
-	# 	open($FILE, '>>:utf8', "$opts{OUT}/$param{ID}.tri_$param{T}_$param{order}")			#Create the output file
-	# 		or die "It couldn't be created $opts{OUT}/$param{ID}.tri_$type\_$param{T}_$param{order}";
-	#
-	# 	foreach $system (sort { $trivergence{$type}{$a} <=> $trivergence{$type}{$b} } keys %{$trivergence{$type}})
-	# 	{
-	# 		print($FILE "$param{QID}\t$system\t");
-	# 		print($FILE $trivergence{$type}{$system});
-	# 		print ($FILE "\n");
-	# 	}
-	# 	close($FILE);
-	# }
 }
 
 sub readPR
@@ -345,7 +360,8 @@ sub getNGrams
 	my $gram;
 
 	$param{text}=limpiar($param{text});
-	%n=%{ngramsJM(text => $param{text}, lang => $opts{l}, uni=>0, num =>0, letter=>0, stop => 0, skipU => 4)};
+
+	%n=%{ngramsJM(text => $param{text}, lang => $opts{l}, uni=>0, num =>0, letter=>0, stop => 0, skipU => 4, stem =>$opts{stem}, ultra => $opts{ultra})};
 	foreach $type (keys(%n))
 	{
 		if($param{Q})
