@@ -1,4 +1,4 @@
-# Copyright (C) 2009-2015 Luis Adrián Cabrera-Diego; Juan-Manuel Torres-Moreno
+# Copyright (C) 2009-2016 Luis Adrián Cabrera-Diego; Juan-Manuel Torres-Moreno
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
