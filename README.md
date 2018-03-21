@@ -6,7 +6,7 @@ There is an example of the config file in Config.
 
 To run you have to go to SummTriver_src and run with perl summTriver_Exp.perl [config.xml]
 
-A wiki or tutorial will posted in the future.
+A better example is now provided. A wiki or tutorial will posted in the future.
 
 If you use this program, please cite it with:
 
