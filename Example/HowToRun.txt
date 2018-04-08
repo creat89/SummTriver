@@ -1,1 +1,4 @@
 perl summTriver_Exp.perl [PATH_config_file]
+
+
+If you want to use the config file given as example, you can do it. The only thing to do is change the paths to the correct location; the paths must be absolute (relative paths might work, but there is a risk that it will not work properly).
