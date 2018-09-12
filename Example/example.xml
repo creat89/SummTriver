@@ -1,7 +1,17 @@
 <evaluation id="example">
 	<!-- General cofiguration -->
+	<!-- Options in text
+		lang: language
+ 	     	stem: [0] None, [P] Porter (Default), [1-5] UltraStemming-->
 	<text lang="en" stem="P"/>
+	<!-- Options in trivergence
+ 		Smoothing: [LN] Louis-Nenkova (Default), [D] Fixed value, [GT] Good-Turing, [value in scientific notation] user-specified -->
 	<trivergence>
+	<!-- Options in config
+ 		order: The order of the trivergence as seen in the article
+		measure: The diverge to use
+		method: Which kind of tivergence is calculated, either [m] multiplication or  [c] composition
+		normalization: [1] activated or [0] deactivated for trivergence by composition-->	
 		<config order="QP,QR,PR" measure="KL" method="m"/>
 		<config order="QP,QR,PR" measure="sJS" method="m"/>
 		<config order="Q,PR" measure="sJS" method="c"/>
