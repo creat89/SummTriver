@@ -3,8 +3,8 @@ Automatic Evalation Method without References for Summaries
 
 To run you have to go to SummTriver_src and run with perl summTriver_Exp.perl [config.xml]
 
-There is a working example in the repository.
-A wiki or tutorial will posted in the future.
+There is a working example in the repository. A new wiki is available (here)[https://github.com/creat89/SummTriver/wiki] and will be expanded in the future.
+
 
 If you use this program, please cite it with:
 
