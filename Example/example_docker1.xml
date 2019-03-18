@@ -1,0 +1,53 @@
+<!-- This example considers that the data is located in the mounted folder in /DataInDocker/ -->
+<evaluation id="example_docker">
+	<!-- General cofiguration -->
+	<!-- Options in text
+		lang: language
+ 	     	stem: [0] None, [P] Porter (Default), [1-5] UltraStemming-->
+	<text lang="en" stem="P"/>
+	<!-- Options in trivergence
+ 		Smoothing: [LN] Louis-Nenkova (Default), [D] Fixed value, [GT] Good-Turing, [value in scientific notation] user-specified -->
+	<trivergence>
+	<!-- Options in config
+ 		order: The order of the trivergence as seen in the article
+		measure: The diverge to use
+		method: Which kind of tivergence is calculated, either [m] multiplication or  [c] composition
+		normalization: [1] activated or [0] deactivated for trivergence by composition-->	
+		<config order="QP,QR,PR" measure="KL" method="m"/>
+		<config order="QP,QR,PR" measure="sJS" method="m"/>
+		<config order="Q,PR" measure="sJS" method="c"/>
+		<config order="QP,QR,PR" measure="JS" method="m"/>
+		<config order="Q,PR" measure="JS" method="c"/>
+		<config order="Q,PR" measure="KL" method="c"/>
+	</trivergence>
+	<!-- Use absolute paths, otherwise it might break -->
+	<!-- If Docker is used, then, it is considered that the external folder has been loaded in DataInDocker.-->
+	<output path="/DataInDocker/Results_Docker"/>
+	<!-- Set configuration -->
+	<!-- Multi document with multi=1 -->
+	<set id="Source_MultiDoc">
+		<Q id="Multi" path="/DataInDocker/Multidocument/" multi="1"/>
+		<PR>
+			<file system="resume_puces_P143" path="/DataInDocker/Summaries/resume_puces_P143.txt"/>
+			<file system="puces_baseline_prim" path="/DataInDocker/Summaries/puces_baseline_prim.txt"/>
+			<file system="puces_copernic" path="/DataInDocker/Summaries/puces_copernic.txt"/>
+			<file system="puces_ots" path="/DataInDocker/Summaries/puces_ots.txt"/>
+			<file system="puces_baseline_last" path="/DataInDocker/Summaries/puces_baseline_last.txt"/>
+			<file system="resume_puces_P088" path="/DataInDocker/Summaries/resume_puces_P088.txt"/>
+			<file system="resume_puces_P135" path="/DataInDocker/Summaries/resume_puces_P135.txt"/>
+		</PR>
+	</set>
+	<!-- Mono document with multi=0 -->
+	<set id="Source_MonoDoc">
+		<Q id="Mono" path="/DataInDocker/Monodocument/puces.txt" multi="0"/>
+		<PR>
+			<file system="resume_puces_P143" path="/DataInDocker/Summaries/resume_puces_P143.txt"/>
+			<file system="puces_baseline_prim" path="/DataInDocker/Summaries/puces_baseline_prim.txt"/>
+			<file system="puces_copernic" path="/DataInDocker/Summaries/puces_copernic.txt"/>
+			<file system="puces_ots" path="/DataInDocker/Summaries/puces_ots.txt"/>
+			<file system="puces_baseline_last" path="/DataInDocker/Summaries/puces_baseline_last.txt"/>
+			<file system="resume_puces_P088" path="/DataInDocker/Summaries/resume_puces_P088.txt"/>
+			<file system="resume_puces_P135" path="/DataInDocker/Summaries/resume_puces_P135.txt"/>
+		</PR>
+	</set>
+</evaluation>
