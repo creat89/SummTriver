@@ -21,7 +21,7 @@
 		<config order="Q,PR" measure="KL" method="c"/>
 	</trivergence>
 	<!-- Use absolute paths, otherwise it might break -->
-	<output path="/DataInDocker/Results"/>
+	<output path="/DataInDocker/Results_Docker"/>
 	<!-- Set configuration -->
 	<!-- Multi document with multi=1 -->
 	<set id="Source_MultiDoc">

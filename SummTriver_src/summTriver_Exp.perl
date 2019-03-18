@@ -232,8 +232,8 @@ sub printResults
 		print("Creating $opts{OUT}");
 		mkdir($opts{OUT},0755);
 	}
-	open($FILE, '>:utf8', "$opts{OUT}/$param{ID}.summTriver")				#Create the output file
-		or die "It couldn't be created $opts{OUT}/$param{ID}.summTriver";
+	open($FILE, '>:utf8', "$opts{OUT}/$param{ID}.txt")				#Create the output file
+		or die "It couldn't be created $opts{OUT}/$param{ID}.txt";
 	print($FILE "SYSTEM");
 	foreach $order (@orderingOUT)
 	{
