@@ -1,9 +1,12 @@
 # SummTriver
-Automatic Evalation Method without References for Summaries
 
-To run you have to go to SummTriver_src and run with perl summTriver_Exp.perl [config.xml]
+Automatic Evalation Method without References for Summaries.
 
-There is a working example in the repository. A new wiki is available in https://github.com/creat89/SummTriver/wiki and will be expanded in the future. The wiki explains the dependencies necessary to run the program and how to interpret the results.
+# How to download and run SummTriver?
+
+Now you can get SummTriver either through GitHub or [Docker](https://hub.docker.com/r/creat89/summtriver). You can know more about them in our new and growing [Wiki](https://github.com/creat89/SummTriver/wiki).
+
+There is a working example in the repository.
 
 # How to cite?
 
