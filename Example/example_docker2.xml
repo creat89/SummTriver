@@ -1,3 +1,4 @@
+<!-- This example considers that the data is located in the mounted folder in /DataInDocker/ and the output will be redirected to the same place -->
 <evaluation id="example_docker">
 	<!-- General cofiguration -->
 	<!-- Options in text
@@ -20,7 +21,6 @@
 		<config order="Q,PR" measure="KL" method="c"/>
 	</trivergence>
 	<!-- Use absolute paths, otherwise it might break -->
-	<!-- If Docker is used, then, it is considered that the external folder has been loaded in DataInDocker.-->
 	<output path="/DataInDocker/Results"/>
 	<!-- Set configuration -->
 	<!-- Multi document with multi=1 -->
