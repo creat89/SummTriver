@@ -1,12 +1,14 @@
 # SummTriver
 
-Automatic Evalation Method without References for Summaries.
+SummTriver is a tool for evaluating summaries automatically without using reference summaries, unlike ROUGE. SummTriver, utlisies multiple divergences to achieve this and has shown promising results, especially in data from summarization campaigns.
 
 # How to download and run SummTriver?
 
 Now you can get SummTriver either through GitHub or [Docker](https://hub.docker.com/r/creat89/summtriver). You can know more about them in our new and growing [Wiki](https://github.com/creat89/SummTriver/wiki).
 
-There is a working example in the repository.
+# How to use SummTriver?
+
+Check our [Wiki](https://github.com/creat89/SummTriver/wiki) where you'll find out more information about SummTriver.
 
 # How to cite?
 
