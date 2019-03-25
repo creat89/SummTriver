@@ -24,7 +24,7 @@ volume = "113",
 pages = "184 - 197",
 year = "2018",
 issn = "0169-023X",
-doi = "https://doi.org/10.1016/j.datak.2017.09.001",
+doi = "doi.org/10.1016/j.datak.2017.09.001",
 author = "Luis Adrián Cabrera-Diego and Juan-Manuel Torres-Moreno"
 }
 
@@ -48,7 +48,7 @@ J.-M. Torres-Moreno, "Beyond Stemming and Lemmatization: Ultra-stemming to Impro
 ```
 The examples were obtained from the The PUCES corpus of Automatic Text Summarization (http://dev.termwatch.es/~fresa/CORPUS/PUCES/):
 
-L. A. Cabrera-Diego, J.-M. Torres-Moreno, and B. Durette, "Evaluating Multiple Summaries Without Human Models: A First Experiment with a Trivergent Model" in Natural Language Processing and Information Systems. Proceedings of the 21st International conference on the Application of Natural Language to Information Systems (NLDB 2016), Manchester, UK, 2016, vol. 9612, pp. 91–101.
+L. A. Cabrera-Diego, J.-M. Torres-Moreno, and B. Durette, "Evaluating Multiple Summaries Without Human Models: A First Experiment with a Trivergent Model" in Natural Language Processing and Information Systems. Proceedings of the 21st International conference on the Application of Natural Language to Information Systems (NLDB 2016), Manchester, UK, 2016, vol. 9612, pp. 91–101. https://doi.org/10.1007/978-3-319-41754-7_8
 
 
 ```
@@ -60,6 +60,7 @@ L. A. Cabrera-Diego, J.-M. Torres-Moreno, and B. Durette, "Evaluating Multiple S
 	author = {Cabrera-Diego, Luis Adrián and Torres-Moreno, Juan-Manuel and Durette, Barthélémy},
 	editor = {Métais, Elisabeth and Meziane, Farid and Saraee, Mohamed and Sugumaran, Vijay and Vadera, Sunil},
 	year = {2016},
+	doi = "doi.org/10.1007/978-3-319-41754-7_8"
 	pages = {91--101}
 }
 ```
