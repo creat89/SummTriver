@@ -1,6 +1,6 @@
 # SummTriver
 
-SummTriver is a tool for evaluating summaries automatically without using reference summaries, unlike ROUGE. SummTriver, utlisies multiple divergences to achieve this and has shown promising results, especially in data from summarization campaigns.
+SummTriver is a tool for evaluating summaries automatically without using reference summaries, unlike ROUGE. SummTriver, utilizes multiple divergences to achieve this and has shown promising results, especially in data from summarization campaigns.
 
 # How to download and run SummTriver?
 
