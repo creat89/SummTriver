@@ -232,16 +232,16 @@ sub printResults
 		print("Creating $opts{OUT}");
 		mkdir($opts{OUT},0755);
 	}
-	open($FILE, '>:utf8', "$opts{OUT}/$param{ID}.txt")				#Create the output file
-		or die "It couldn't be created $opts{OUT}/$param{ID}.txt";
-	print($FILE "SYSTEM");
-	foreach $order (@orderingOUT)
-	{
-		print($FILE "\t$order");
-	}
-	print($FILE "\n");
 	foreach $set (keys(%trivergence))
 	{
+		open($FILE, '>:utf8', "$opts{OUT}/$param{ID}_$set.tsv")				#Create the output file
+			or die "It couldn't be created $opts{OUT}/$param{ID}_$set.tsv";
+		print($FILE "SYSTEM");
+		foreach $order (@orderingOUT)
+		{
+			print($FILE "\t$order");
+		}
+		print($FILE "\n");
 		foreach $system (keys(%{$trivergence{$set}}))
 		{
 			print($FILE "$system");
